@@ -32,6 +32,24 @@ export class RewardApiService {
     return this.http.get<Customer>(`${this.baseUrl}/${custId}`);
   }
 
+  // --- NEW FEATURES ---
+
+  // 1. Add Customer (@PostMapping("/add"))
+  addCustomer(customerData: any): Observable<string> {
+    // Note: backend returns String ("Customer added"), so we use responseType: 'text'
+    return this.http.post(`${this.baseUrl}/add`, customerData, { responseType: 'text' });
+  }
+
+  // 2. Soft Delete Customer (@PutMapping("/{custId}"))
+  deleteCustomer(custId: number): Observable<string> {
+    return this.http.put(`${this.baseUrl}/${custId}`, {}, { responseType: 'text' });
+  }
+
+  // 3. Add Credit Card (@PostMapping("/{customerId}/cards"))
+  addCreditCard(customerId: number, cardData: any): Observable<string> {
+    return this.http.post(`${this.baseUrl}/${customerId}/cards`, cardData, { responseType: 'text' });
+  }
+  
   // --- Transactions ---
   getTransactions(): Observable<Transaction[]> {
     const url = `${this.baseUrl}/customers/${this.customerId}/cards/${this.cardNumber}/transactions`;

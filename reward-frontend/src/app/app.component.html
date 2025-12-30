@@ -1,16 +1,18 @@
-<nav class="navbar navbar-dark bg-dark mb-4 shadow">
+<nav *ngIf="router && router.url !== '/login'" class="navbar navbar-dark bg-dark mb-4 shadow">
   <div class="container-fluid">
-    
     <a class="navbar-brand fw-bold" routerLink="/">
       <span class="fs-4">🏦 Reward App</span>
     </a>
+    
+    <div class="d-flex align-items-center gap-2">
+      <button *ngIf="authService.isAdmin()" class="btn btn-warning btn-sm fw-bold" routerLink="/admin">
+        👑 Admin Panel
+      </button>
 
-    <div class="d-flex">
-      <a class="btn btn-outline-light btn-sm" routerLink="/">
-        🔍 Search Customers
-      </a>
+      <button class="btn btn-outline-danger btn-sm" (click)="logout()">
+        Logout
+      </button>
     </div>
-
   </div>
 </nav>
 
