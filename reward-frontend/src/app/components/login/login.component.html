@@ -1,20 +1,43 @@
-<div class="container mt-5 col-md-4">
-    <div class="card shadow">
-      <div class="card-header bg-primary text-white">CES Login</div>
-      <div class="card-body">
-        <div *ngIf="errorMsg" class="alert alert-danger">{{ errorMsg }}</div>
-        
-        <form (ngSubmit)="onLogin()">
-          <div class="mb-3">
-            <label>Username</label>
-            <input type="text" class="form-control" [(ngModel)]="username" name="user">
-          </div>
-          <div class="mb-3">
-            <label>Password</label>
-            <input type="password" class="form-control" [(ngModel)]="password" name="pass">
-          </div>
-          <button class="btn btn-primary w-100">Login</button>
-        </form>
+<div class="login-wrapper">
+  
+  <div class="login-container">
+    <div class="logo-section">
+      <i class="fa-solid fa-hurricane logo-icon"></i>
+      <div class="logo-text">
+        <h1>CES</h1>
+        <p>CES | Customer Experience System</p>
       </div>
     </div>
+
+    <div *ngIf="errorMsg" class="alert-box">
+      {{ errorMsg }}
+    </div>
+
+    <form (ngSubmit)="onLogin()">
+      <div class="input-group">
+        <i class="fa-regular fa-user"></i>
+        <input type="text" 
+               class="login-input" 
+               placeholder="Username" 
+               [(ngModel)]="username" 
+               name="username" 
+               required>
+      </div>
+      
+      <div class="input-group">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" 
+               class="login-input" 
+               placeholder="Password" 
+               [(ngModel)]="password" 
+               name="password" 
+               required>
+      </div>
+
+      <button type="submit" class="login-button">Log In</button>
+      
+      <a href="#" class="forgot-password">Forgot Password?</a>
+    </form>
   </div>
+
+</div>

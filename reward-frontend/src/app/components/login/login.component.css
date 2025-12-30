@@ -1,0 +1,147 @@
+/* --- PAGE BACKGROUND --- */
+.login-wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Ensures it covers the whole screen */
+    top: 0;
+    left: 0;
+    
+    /* Dark Gradient Tech Background */
+    background-color: #0a0e1a;
+    background-image: 
+        radial-gradient(circle at 50% 30%, rgba(24, 138, 219, 0.2) 0%, rgba(108, 29, 179, 0.1) 40%, rgba(10, 14, 26, 1) 80%),
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 10px),
+        repeating-linear-gradient(-45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 10px);
+    background-size: cover;
+}
+
+/* --- GLASS CONTAINER --- */
+.login-container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* --- LOGO --- */
+.logo-section {
+    margin-bottom: 35px;
+}
+
+.logo-icon {
+    font-size: 40px;
+    background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.logo-text h1 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.logo-text p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 1px;
+}
+
+/* --- INPUTS --- */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left; /* Aligns icons correctly */
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00d2ff;
+    font-size: 18px;
+    pointer-events: none; /* Allows clicking through icon */
+}
+
+.login-input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.login-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.login-input:focus {
+    border-color: #00d2ff;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
+}
+
+/* --- BUTTONS --- */
+.login-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+}
+
+.forgot-password {
+    display: inline-block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* --- ALERT BOX STYLE --- */
+.alert-box {
+    background: rgba(220, 53, 69, 0.2);
+    border: 1px solid #dc3545;
+    color: #ff8b94;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
